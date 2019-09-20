@@ -1,22 +1,100 @@
 .App {
-  text-align: center;
+  text-align: left;
+  background-color: #afd4c0;
 }
 
-.App-logo {
-  height: 40vmin;
+.houseImg {
+  float: left;
+  height: 12rem;
+  width: auto;
+  margin-right: 3%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container1 {
+  float: inline-end;
+  font-size: 1rem;
+  
+}
+
+.container2 {
+  float: inline-end;
+}
+
+h3 {
+  font-size: .7rem;
+}
+
+.houseListing {
+  margin: auto;
+  padding: 2%;
+  background-color: #dedede;
+  height: 200px;
+  width: 800px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-bottom: 3%;
 }
 
-.App-link {
-  color: #09d3ac;
+.header {
+  height: 50px;
+  width: 100vw;
+  background-color: #519872;
+  color: white;
+  font-size: 2rem;
+
 }
+
+.dashContainer {
+  height: 100vh;
+  width: 60vw;
+  background-color: #e5f4ec;
+  margin: auto;
+  padding-left: 2%;
+
+}
+
+.add {
+  background-color: #8aea92;
+  float: right;
+  width: 8.5rem;
+  height: 2.5rem;
+  margin-right: 3%;
+  margin-top: 2%;
+  font-weight: bold;
+}
+
+.inputContainer {
+  padding: 20%;
+}
+
+.next {
+  float: right;
+  margin-right: 5%;
+  background-color: #3b5249;
+  border: none;
+  color: white;
+  height: 2rem;
+  width: 3rem;
+
+
+}
+
+.cancel {
+  float: right;
+  margin-right: 5%;
+  background-color: #fec2c2;
+  border: none;
+  height: 2rem;
+
+  
+}
+
+.previous {
+  background-color: #3b5249;
+  border: none;
+  color: white;
+  height: 2rem;
+  width: 4rem;
+  
+}
+

@@ -61,6 +61,7 @@ h3 {
   margin-right: 3%;
   margin-top: 2%;
   font-weight: bold;
+  border: none;
 }
 
 .inputContainer {
@@ -96,5 +97,19 @@ h3 {
   height: 2rem;
   width: 4rem;
   
+}
+
+.complete {
+  float: right;
+  margin-right: 5%;
+  background-color: #8aea92;
+  border: none;
+  height: 2rem;
+  width: 4.5rem;
+
+}
+
+h1 {
+  padding-top: 2%;
 }
 

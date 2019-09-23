@@ -1,35 +1,99 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import store, { UPDATE_RENT_AMOUNT, UPDATE_MORTGAGE, CANCEL } from "../../store";
+import axios from "axios";
 
 export default class Step2 extends Component {
-    constructor(){
+    constructor() {
         super()
+        const reduxState = store.getState();
+
+        this.state = {
+            rentAmount: reduxState.rentAmount,
+            mortgage: reduxState.mortgage
+        };
     }
 
-    render(){
-        return(
-            <div className="dashContainer">
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
+
+    getHouses = () => {
+        axios.get("/api/houses").then(res => {
+            this.setState({
+                houses: res.data
+            });
+        });
+    }
+    step3 = () => {
+        store.dispatch({
+            type: UPDATE_RENT_AMOUNT,
+            payload: this.state.rentAmount
+        });
+        store.dispatch({
+            type: UPDATE_MORTGAGE,
+            payload: this.state.mortgage
+        });
+        let reduxState = store.getState();
+        axios.post("/api/houses", reduxState).then(res => {
+            console.log("ok");
+        });
+        store.dispatch({
+            type: CANCEL
+        });
+        this.getHouses()
+
+
+    };
+
+    goBack = () => {
+        store.dispatch({
+            type: UPDATE_RENT_AMOUNT,
+            payload: this.state.amount
+        });
+        store.dispatch({
+            type: UPDATE_MORTGAGE,
+            payload: this.state.mortgage
+        });
+    };
+
+
+    render() {
+        return (
+            <div className="App2">
+            <div className="dashContainer2">
                 <h1> Add New Listing</h1>
-                <Link to="/">
-                    <button className="cancel">Cancel</button>
-                </Link>
                 <div className="inputContainer">
-                <div>
-                 Monthly Mortgage Amount:   <input></input>
-                </div>
-                <div>
-                 Desired Monthly Rent:   <input></input>
-                </div>
-                
+                <form className="form">
+                    <div>
+                        Monthly Mortgage Amount: <br/>
+                 <input
+                            type=""
+                            name="mortgage"
+                            onChange={e => this.handleChange(e)}
+                        />
+                    </div>
+                    <div>
+                        Desired Monthly Rent: <br/>
+                        <input
+                            type=""
+                            name="rentAmount"
+                            onChange={e => this.handleChange(e)}
+                        />
+                    </div>
+                </form>
                 </div>
                 <Link to="/wizard/step2">
-                    <button className="previous">Previous</button>
+                    <button onClick={this.goBack} className="previous">Previous</button>
                 </Link>
                 <Link to="/">
-                    <button className="complete">Complete</button>
+                    <button onClick={this.step3} className="complete">Complete</button>
                 </Link>
-                
 
+
+            </div>
             </div>
         )
     }

@@ -1,6 +1,13 @@
 .App {
   text-align: left;
   background-color: #afd4c0;
+  height: 100%;
+  width: 100vw;
+}
+
+.App2 {
+  background-color: #afd4c0;
+  height: 100vh;
 }
 
 .houseImg {
@@ -29,7 +36,7 @@ h3 {
   padding: 2%;
   background-color: #dedede;
   height: 200px;
-  width: 800px;
+  width: 45vw;;
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
@@ -41,11 +48,21 @@ h3 {
   background-color: #519872;
   color: white;
   font-size: 2rem;
+  padding-left:3%;
 
 }
 
 .dashContainer {
-  height: 100vh;
+  height: 100%;
+  width: 60vw;
+  background-color: #e5f4ec;
+  margin: auto;
+  padding-left: 2%;
+
+}
+
+.dashContainer2 {
+  height: 80vh;
   width: 60vw;
   background-color: #e5f4ec;
   margin: auto;
@@ -62,30 +79,37 @@ h3 {
   margin-top: 2%;
   font-weight: bold;
   border: none;
+  cursor: pointer;
 }
 
 .inputContainer {
   padding: 20%;
+  text-align: center; 
 }
 
 .next {
-  float: right;
-  margin-right: 5%;
+  position: absolute;
+  bottom: 120px;
+  right: 350px;
   background-color: #3b5249;
   border: none;
   color: white;
   height: 2rem;
   width: 3rem;
+  cursor: pointer;
+
 
 
 }
 
 .cancel {
-  float: right;
-  margin-right: 5%;
+  position: absolute;
+  top: 120px;
+  right: 350px;
   background-color: #fec2c2;
   border: none;
   height: 2rem;
+  cursor: pointer;
 
   
 }
@@ -96,6 +120,11 @@ h3 {
   color: white;
   height: 2rem;
   width: 4rem;
+  position: absolute;
+  bottom: 120px;
+  left: 350px;
+  cursor: pointer;
+
   
 }
 
@@ -106,10 +135,34 @@ h3 {
   border: none;
   height: 2rem;
   width: 4.5rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 120px;
+  right: 275px;
 
 }
 
 h1 {
   padding-top: 2%;
+}
+
+.delete {
+  background-color: #dedede;
+  border: none;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+}
+
+.form {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 25vh;
+  right: 37vw;;
+}
+
+input {
+  height: 20px;
+  width: 400px;
 }
 
